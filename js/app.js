@@ -71,7 +71,7 @@ const displayMobileDetail = data => {
               <hr>
               
 
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" class="btn btn-primary">Buy Now</a>
             </div>
     `;
     mobileDetails.appendChild(div);
