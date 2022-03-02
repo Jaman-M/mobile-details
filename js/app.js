@@ -69,9 +69,16 @@ const displayMobileDetail = data => {
               <h5>Sensors: </h5><p>${data.mainFeatures?.sensors.join(", ") || 'No found'}
               
               <hr>
-              
+              <hr>
+              <h5>Others: </h5>
+              <p>WLAN: ${data?.others?.WLAN || 'No found'}
+              <p>Bluetooth: ${data?.others?.Bluetooth || 'No found'}
+              <p>GPS: ${data?.others?.GPS || 'No found'}
+              <p>NFC: ${data?.others?.NFC || 'No found'}
+              <p>Radio: ${data?.others?.Radio || 'No found'}
+              <p>USB: ${data?.others?.USB || 'No found'} <br>
 
-              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="#" class="btn btn-primary ">Buy Now</a>
             </div>
     `;
     mobileDetails.appendChild(div);
