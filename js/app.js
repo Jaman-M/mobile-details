@@ -47,3 +47,32 @@ const loadMobileDetail = id => {
     .then(response => response.json())
     .then(data => displayMobileDetail(data.data))
 };
+
+//mobile details info 
+
+const displayMobileDetail = data => {
+    console.log(data);
+    const mobileDetails = document.getElementById('mobile-details');
+
+    mobileDetails.textContent = '';
+    const div = document.createElement('div');
+    div.classList.add('card');
+    div.innerHTML =`
+    <img src="${data.image}" class="card-img-top p-5" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${data.name}</h5>
+              <p>${data.releaseDate || 'No release Date found'}</p>
+              <p>Display Size: ${data.mainFeatures.displaySize || 'No found'}</p>
+              <p>Memory: ${data.mainFeatures.memory || 'No found'}</p>
+              <p>Chip-set: ${data.mainFeatures.chipSet || 'No found'}</p>
+              <hr>
+              <h5>Sensors: </h5><p>${data.mainFeatures?.sensors.join(", ") || 'No found'}
+              
+              <hr>
+              
+
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+    `;
+    mobileDetails.appendChild(div);
+}
