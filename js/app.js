@@ -37,3 +37,13 @@ const displaySearchResult =data => {
         searchResult.appendChild(div);
     })
 }
+
+// get phone details 
+const loadMobileDetail = id => {
+    // console.log(id);
+    const url = `https://openapi.programming-hero.com/api/phone/${id}`
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => displayMobileDetail(data.data))
+};
